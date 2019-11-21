@@ -18,4 +18,10 @@ Create a chat system in a scalable platform.
 ## Running on docker
 To running on a docker container follow this commands bellow:
 - `$ docker build -t chat-websocket .`
-- `$ docker run --name chat chat-websocket:latest`
+- `$ docker run --name -p 8080:8080 chat chat-websocket:latest`
+
+## Executing
+Access the endpoint in `ws://localhost:8080/chat/{{username}}` url.
+To send messages use the `{"to": "{{another-user}}", "content": "{{message}}"}` pattern.
+
+I am using [wscat](https://www.npmjs.com/package/wscat) to test.
